@@ -46,35 +46,40 @@ public class MainActivity extends AppCompatActivity {
         mBtnOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"one",Toast.LENGTH_SHORT);
+                Toast.makeText(MainActivity.this, "one", Toast.LENGTH_SHORT).show();
+                closeMenu();
 
             }
         });
         mBtnTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"two",Toast.LENGTH_SHORT);
+                Toast.makeText(MainActivity.this, "two", Toast.LENGTH_SHORT).show();
+                closeMenu();
 
             }
         });
         mBtnThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"three",Toast.LENGTH_SHORT);
+                Toast.makeText(MainActivity.this, "three", Toast.LENGTH_SHORT).show();
+                closeMenu();
 
             }
         });
         mBtnFour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"four",Toast.LENGTH_SHORT);
+                Toast.makeText(MainActivity.this, "four", Toast.LENGTH_SHORT).show();
+                closeMenu();
 
             }
         });
         mBtnFive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"five",Toast.LENGTH_SHORT);
+                Toast.makeText(MainActivity.this, "five", Toast.LENGTH_SHORT).show();
+                closeMenu();
 
             }
         });
@@ -82,11 +87,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void openMenu() {
         isOpen = true;
-        ViewAnimator.animate(mBtnOne).dp().translationY(0, -200).duration(600).translationX(0, -100)
-                .andAnimate(mBtnTwo).dp().translationY(0, -100).translationX(0, -150)
-                .andAnimate(mBtnThree).dp().translationY(0, -100)
-                .andAnimate(mBtnFour).dp().translationY(0, -200)
-                .andAnimate(mBtnFive).dp().translationX(0, -200)
+        ViewAnimator.animate(mBtnOne).dp().translationY(0, -210,-190, -200).duration(600).translationX(0, -110, -90,-100)
+                .andAnimate(mBtnTwo).dp().translationY(0, -110,-90 ,-100).translationX(0, -160,-140, -150)
+                .andAnimate(mBtnThree).dp().translationY(0, -110, -90,-100)
+                .andAnimate(mBtnFour).dp().translationY(0, -210,-190, -200)
+                .andAnimate(mBtnFive).dp().translationX(0, -210,-190, -200)
                 .andAnimate(mBtnMeun).rotation(45)
                 .thenAnimate(mBtnOne, mBtnTwo, mBtnThree, mBtnFour, mBtnFive).tada().wave()
                 .descelerate().start();
@@ -94,14 +99,21 @@ public class MainActivity extends AppCompatActivity {
 
     private void closeMenu() {
         isOpen = false;
-        ViewAnimator.animate(mBtnOne).dp().translationY(-200, 0).duration(600).translationX(-100, 0)
-                .andAnimate(mBtnTwo).dp().translationY(-100, 0).translationX(-150, 0)
-                .andAnimate(mBtnThree).dp().translationY(-100, 0)
-                .andAnimate(mBtnFour).dp().translationY(-200, 0)
-                .andAnimate(mBtnFive).dp().translationX(-200, 0)
+        ViewAnimator.animate(mBtnOne).dp().translationY(-200, -210, 0).duration(600).translationX(-100, -110, 0)
+                .andAnimate(mBtnTwo).dp().translationY(-100, -110, 0).translationX(-150, -160, 0)
+                .andAnimate(mBtnThree).dp().translationY(-100, -110, 0)
+                .andAnimate(mBtnFour).dp().translationY(-200, -210, 0)
+                .andAnimate(mBtnFive).dp().translationX(-200, -210, 0)
                 .andAnimate(mBtnMeun).rotation(0).shake()
                 .accelerate().start();
-
     }
 
+    @Override
+    public void onBackPressed() {
+        if (isOpen) {
+            closeMenu();
+        } else {
+            super.onBackPressed();
+        }
+    }
 }
