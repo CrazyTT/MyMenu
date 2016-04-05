@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.chenliuliu.mymenu.utils.viewanimation.ViewAnimator;
 
@@ -40,6 +41,41 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     closeMenu();
                 }
+            }
+        });
+        mBtnOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"one",Toast.LENGTH_SHORT);
+
+            }
+        });
+        mBtnTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"two",Toast.LENGTH_SHORT);
+
+            }
+        });
+        mBtnThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"three",Toast.LENGTH_SHORT);
+
+            }
+        });
+        mBtnFour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"four",Toast.LENGTH_SHORT);
+
+            }
+        });
+        mBtnFive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"five",Toast.LENGTH_SHORT);
+
             }
         });
     }
