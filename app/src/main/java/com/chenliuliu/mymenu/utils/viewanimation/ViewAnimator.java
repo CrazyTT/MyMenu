@@ -16,8 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by florentchampigny on 22/12/2015.
- * Modified by gzu-liyujiang on 24/01/2016.
+ * Created by chenll on 22/12/2015.
  */
 public class ViewAnimator {
     private static final long DEFAULT_DURATION = 3000;
@@ -42,7 +41,7 @@ public class ViewAnimator {
     /**
      * The interface Repeat mode.
      */
-    @IntDef(flag = false, value = {ValueAnimator.RESTART, ValueAnimator.REVERSE,ValueAnimator.INFINITE})
+    @IntDef(flag = false, value = {ValueAnimator.RESTART, ValueAnimator.REVERSE, ValueAnimator.INFINITE})
     @Retention(RetentionPolicy.SOURCE)
     public @interface RepeatMode {
         //代替enum，据说枚举类极其耗费内存

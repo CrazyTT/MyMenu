@@ -21,8 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by florentchampigny on 22/12/2015.
- * Modified by gzu-liyujiang on 24/01/2016.
  */
 public class AnimationBuilder {
     private final ViewAnimator viewAnimator;
